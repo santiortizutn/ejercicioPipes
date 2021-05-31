@@ -1,0 +1,47 @@
+<div *ngIf="!unAlumno">
+
+
+    <button class="btn btn-lg btn-warning btn-block" (click)="nuevoAlumno()">Nuevo </button>
+
+
+</div>
+<div *ngIf="unAlumno">
+    <h2>{{unAlumno.legajo}} Legajo</h2>
+    <div>
+        <label>Apellido:
+        <input [(ngModel)]="unAlumno.apellido" placeholder="apellido">
+        {{unAlumno.apellido | uppercase}}
+      </label>
+    </div>
+    <div>
+        <label>Nombre:
+          <input [(ngModel)]="unAlumno.nombre" placeholder="nombre">
+          {{unAlumno.nombre | lowercase}}
+        </label>
+    </div>
+    <div>
+      <label>Fecha:
+        <input [(ngModel)]="hoy" placeholder="fecha">
+        {{hoy | date:"short"}}
+      </label>
+  </div>
+  <div>
+    <label>Algo:
+      <input [(ngModel)]="algo" placeholder="algo">
+      {{algo | currency}}
+    </label>
+</div>
+<div>
+<label>Mi Pipe:
+  <input [(ngModel)]="test" placeholder="test">
+  {{test | pipe:5}}
+</label>
+</div>
+    <img class="card-img-top" src="/assets/imagenes/pordefecto.png" alt="Card image" style="width:70px">
+    <button type="button" class="btn btn-default btn-circle"><i class="fa fa-cloud-upload"></i>Cambiar</button>
+    <button class="btn btn-lg btn-success btn-block" (click)="crearAlumno()">Crear</button>
+
+
+
+
+</div>
